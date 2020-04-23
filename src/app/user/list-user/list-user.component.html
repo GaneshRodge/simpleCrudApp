@@ -1,0 +1,27 @@
+<div class="col-md-6 user-container">
+    <h2 style="margin: auto"> User Details</h2>
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>Id</th>
+        <th>FirstName</th>
+        <th>LastName</th>
+        <th>Email</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let user of users | paginate:{itemsPerPage: 5, currentPage:p}">
+        <td>{{user.id}}</td>
+        <td>{{user.first_name}}</td>
+        <td>{{user.last_name}}</td>
+        <td>{{user.email}}</td>
+      </tr>
+      </tbody>
+    </table>
+
+
+    <div id="pagination"class="ml-auto">
+      <pagination-controls (pageChange)="p=$event"></pagination-controls>
+  </div>
+    
+  </div>
